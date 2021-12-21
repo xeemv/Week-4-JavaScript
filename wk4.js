@@ -96,3 +96,60 @@ console.log(`Six times five = ${5 * 6}`);
 ** very useful for anytime you have a string and you need to perform some kind of operation in there to make that string more dynamic hence the term template literals
 ** you can create templates that can then take some variables or code and make them dynamic.
 */
+
+
+/* ES6: Arrow Functions section -- (=>) the fat arrow function
+- definition/purpose: it also adds the additional functionality of binding the current scope to the function 
+
+******
+- the first part of an arrow function is we have to assign it to a variable.
+- we don't have to assign it to a variable but if it's going to be a 
+standalone we're going to assign it to a variable.
+- we don't have to do the concatenation because that space is part of this template literal 
+*/
+
+let createFullName = (firstName, lastName) => firstName + ' ' + lastName;
+console.log(createFullName("Xee", "Vang"));
+// --> invoke just like a normal function
+
+
+
+let createFullNames = (firstName, lastName) => `${firstName} ${lastName}`;
+console.log(createFullNames("Messa", "Vang"));
+/* 
+- or using template literals, change code to line 117
+- we don't have to do the concatenation because that space is part of this template literal 
+- both of these are alot less verbose then writting a function
+- In this example:
+    - we omit the function keyword
+    - got rid of the curly braces 
+    - we got rid of the return symbol
+- if the code looks like line 111 or 117, it is one line:
+    - you do not need the curly brace or return keyword
+    - **it is implicitly return**
+*/
+
+
+/*
+- ****now there are a few rules with this: ****
+- if you have multiple lines or curly braces are needed because you have multiple lines if we know if we want to return something 
+    - then the return keyword would be needed anytime you have the curly braces or the multiple lines. 
+*/
+
+let someFunction = (a, b) => {
+    let result = ' '; // this is blank string
+    for (let i = 0; i < b; i++) {
+        result += a;
+    }
+    return result;
+};
+console.log(someFunction("Messa", 3));
+
+/*
+- in this example 135 - 145:
+    - since there are multiple lines, we need to have curly braces
+    - since we have a return value due to multiple lines, we need a return key word
+    - this sample will return:
+        - MessaMessaMessa ---> like the coding assignment question during wk 3
+*/
+
