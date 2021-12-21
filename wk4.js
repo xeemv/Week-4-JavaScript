@@ -46,25 +46,53 @@ This is because const does not allow us to change the value (reference line 30).
 
 //ES6: Template Literals:
 
-/* to start template literals are declared just like strings but instead of using single or double quotes; we wrap our text in backticks */
+// to start template literals are declared just like strings but instead of using single or double quotes; we wrap our text in backticks
 
 let myString = `Hello
 world
 my name
 is Xee.`; //still need a semicolon
 
-/* the template literal will take into account the spaces in here the new lines */
+// the template literal will take into account the spaces in here the new lines
 
 console.log(myString);
 
-/* this will literally print the myString in the same way it looks from line 51 - 54 */
+// this will literally print the myString in the same way it looks from line 51 - 54
 
 
-let anotherString = "Hell\nworld\nmy name\nis Xee";
+let anotherString = "Hello\nworld\nmy name\nis Xee.";
 
 console.log(anotherString);
-/* what we used to have to do (line 63)
+/* 
+- what we used to have to do (line 63)
 - we would have to use \n = it's an escape character for a new line.
 - Once printed to the console.log, it would look identical to code myString's example above.
 - this will literally print the myString in the same way it looks from line 51 - 54.
+- code line 63 is more difficult to read in vscode or similar programs where as code lin 51-54 is much easier to read w/ the \n.
+*/
 
+let anotherString2 = "Hello" +
+    '\nworld' +
+    '\nmy name' +
+    '\nis Xee.';
+
+console.log(anotherString2);
+/*
+- due to difficulty reading code line 63
+- ppl would concatenate the code like line 74 - 77
+    - this is a lot of work and alot of additional charactes
+- this will literally print the myString in the same way it looks from line 51 - 54.
+*/
+
+/* interpolate = is just a fancy word for saying execute code inside a string or in a different language.
+    - we can use interpolation in our template literals by wrapping any JavaScript we want to execute in curly braces preceded by a dollar sign.*/
+
+
+console.log(`Six times five = ${5 * 6}`); 
+/* 
+- make sure to use backticks aka template literals!!!!
+- the 5 * 6 is actual javascript
+- the result should be: Six times five = 30
+** very useful for anytime you have a string and you need to perform some kind of operation in there to make that string more dynamic hence the term template literals
+** you can create templates that can then take some variables or code and make them dynamic.
+*/
