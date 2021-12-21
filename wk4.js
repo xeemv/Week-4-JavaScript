@@ -77,6 +77,7 @@ let anotherString2 = "Hello" +
     '\nis Xee.';
 
 console.log(anotherString2);
+
 /*
 - due to difficulty reading code line 63
 - ppl would concatenate the code like line 74 - 77
@@ -152,4 +153,41 @@ console.log(someFunction("Messa", 3));
     - this sample will return:
         - MessaMessaMessa ---> like the coding assignment question during wk 3
 */
+
+
+
+/*
+- another roll of the arrow function is if you just have one parameter then you don't need any parentheses you could just have a or whatever the name of your parameter is. 
+    - See sample code on line 162 - 169.
+
+
+let someFunction = (a) => {
+    let result = ' '; // this is blank string
+    for (let i = 0; i < a; i++) {
+        result += a;
+    }
+    return result;
+};
+console.log(someFunction("Messa", 3));
+
+*/
+
+/*
+- So no parentheses needed if you have zero parameters
+    - then you do need the parentheses just blank parentheses 
+    - See sample code on line 162 - 169.
+
+
+let someFunction = (a) => {
+    let result = ' '; // this is blank string
+    for (let i = 0; i < a; i++) {
+        result += a;
+    }
+    return result;
+};
+console.log(someFunction("Messa", 3));
+
+*/
+
+
 
