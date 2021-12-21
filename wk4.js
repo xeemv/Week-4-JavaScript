@@ -6,7 +6,7 @@ var x = 10;
 }
 /* from line 2 - 4, this is considered a block. 
 - Outside of this section, the x is still equal to 10.
-- the 2 is only in existance inside the block.
+- the 2 is only in existence inside the block.
 - let = allows us to say w/in this block, x is equal to 2. 
 - this does not impact the x outside of that block.
 
@@ -81,7 +81,7 @@ console.log(anotherString2);
 /*
 - due to difficulty reading code line 63
 - ppl would concatenate the code like line 74 - 77
-    - this is a lot of work and alot of additional charactes
+    - this is a lot of work and a lot of additional charactes
 - this will literally print the myString in the same way it looks from line 51 - 54.
 */
 
@@ -190,4 +190,53 @@ console.log(someFunction("Messa", 3));
 */
 
 
+// ES6: Callbacks section
 
+let userName = sentHttpRequest('getUser'); // made up function to get userName
+console.log(userName);
+
+/*
+- code on line 195:
+   - it is basically sending a request to get a username 
+   - if we run a function like that and it reaches out to a different server to get the username
+   - then we try to log user name on line 196 
+        - what would happen in this situation is username would be undefined even though it looks like it should be defined 
+        - it would be logged undefined = because this hasn't returned yet
+        - the username hasn't come back in this line (169) of code executed 
+        - before username had the value that would come back from that request to overcome this issue 
+*/
+
+
+/*
+ - callback: is when we pass a function into another function to be executed after that code is complete 
+    - so that doesn't cause a delay 
+    - in JavaScript functions or objects = we can pass them into other functions as arguments
+    - this will cause us to write our code a little differently
+
+- 218 is the usual way we write the code:
+
+let userName = sentHttpRequest('getUser'); // made up function to get userName
+console.log(userName);
+- might look more like line 223
+*/
+
+function logUserName(user) {
+    console.log(user);
+}
+sendHttpRequest('getUser', logUserName); // this line is the argument 
+/*
+- how this works is: 
+- the log username function is passed into the send HTTP request function as an argument 
+- the send HTTP request function does everything it needs
+- then the last line of code in that function would be a call to our log username function 
+    - where it passes the username that it grabbed in as an argument
+    - then this function logs it out
+- you can also declare functions as arguments inside the function call anonymously rather than giving the function a name and passing it in 
+*/
+
+
+/* 
+for example:
+
+
+*/
