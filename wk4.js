@@ -236,7 +236,54 @@ sendHttpRequest('getUser', logUserName); // this line is the argument
 
 
 /* 
-for example:
+for example: line 241
+*/
+sendHttpRequest('getUser', user => console.log(userName)); // an argument
+
+/* 
+- using our arrow function:
+    - this creates a function ----> "user => console.log(userName)""
+    - it's anonymous because it doesn't have a name 
+    - we didn't assign a name to this function 
+    - it's just being used as an argument in this one call now 
 
 
+- if we were going to reuse this functionality over and over again 
+    - we'd want to give it a name: "logUserName" on line 254
+    
+    function logUserName(user) {
+    console.log(user);
+}
+sendHttpRequest('getUser', logUserName);
+    - then pass the name in like in line 257 
+*/
+
+
+
+
+/*
+- one mistake to avoid: line 267
+- w/ the paranetheses - we are so using to calling and invoking w/ the paranetheses there
+*/
+sendHttpRequest('getUser', logUserName());
+
+/*
+- if we put the parentheses, here (line 268):
+    - what happens is this line of code is running
+    - this says call my function 
+    - so it will call the function 
+    - then it won't work because we're not passing in an argument here 
+- what we want to do is do not invoke it 
+- just pass the name of the function in
+    - the name of the function is referring to that function 
+    - it's just like a variable name that refers to a value we're passing in the function itself 
+    - not the invocation of the function 
+    - so that when this send HTTP request gets to the end of what it's doing
+    - it has that username, it can then call this function itself and pass in the user 
+    
+    
+- we don't call the function when we pass it in as a 
+callback 
+- the function we're passing it into will call it 
+- so don't put the parentheses there 
 */
