@@ -287,3 +287,60 @@ callback
 - the function we're passing it into will call it 
 - so don't put the parentheses there 
 */
+
+
+/* Promises section */
+
+/* 
+- a promise = solves the same problem as a callback except they are much cleaner to write and produce code that is easier to read 
+- a promise is an object that represents the eventual completion or failure of an asynchronous operation 
+*/
+
+/* */
+
+doSomethingThatReturnsAPromise() // pretend this is a function
+    .then((value) =>{           //doing this anonymously. Basically when it returns, we should receive a value, then log it out from line 303.
+        console.log(value)
+    }); .catch((err) => {       // however, if it fails, we will get an error 
+        console.log(err)        // this will log out the error
+    });
+
+/*
+- doSomethingThatReturnsAPromise() ====> calling a function to return a promise w/ different libraries
+    - documentation will show which functions return promises
+- this is basically like a try - catch block    
+*/
+
+
+function handleEvent(value) {  // names for function
+    console.log(value);
+}
+
+/*
+doSomethingThatReturnsAPromise()
+    .then((value) =>{  
+        console.log(value)
+    }); .catch((err) => { 
+        console.log(err)
+    });
+*/
+
+/* 
+- both of these two are the same kind of function (315-317 and 320-325)
+- however, if you are using it multiple times, you can give it a name in the .then section see code line 335-340
+ */
+
+
+/*
+function handleEvent(value) {  
+    console.log(value);
+}
+
+function handleError(err) {
+    console.log(err);
+}
+
+doSomethingThatReturnsAPromise()
+    .then(handleEvent)
+    .catch(handleError);
+*/
