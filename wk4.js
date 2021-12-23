@@ -344,3 +344,86 @@ doSomethingThatReturnsAPromise()
     .then(handleEvent)
     .catch(handleError);
 */
+
+
+/* how to print objects during wk4 class lecture */
+
+const email = {
+    author: "Natalie",
+    to: "Calvin",
+    message: "Heyyyy",
+    read: false
+}
+email.message
+
+const emailList = [
+    {
+        author: "Natalie",
+        to: "Calvin",
+        message: "Heyyyy",
+        read: false,
+    },
+    {
+        author: "Xee",
+        to: "Calvin",
+        message: "What's up?",
+        read: true
+    }
+]
+
+/* how to print all the objects to look like a string */
+
+let emailListString = "";
+for (let i =0; i < emailList.length; i++) {
+    emailListString += emailList[1] + "\n";
+}
+
+alert(emailListString);
+
+
+/* 
+let emailListString = "";
+for (let i =0; i < emailList.length; i++) {
+    emailListString += emailList[1].author + "\n";
+}
+
+- .author would pull out that index array object value
+
+let emailListString = "";
+for (let i =0; i < emailList.length; i++) {
+    emailListString += emailList[1].author + " : " + emailList[1].message + "\n";
+}
+
+
+- normal code below:
+function addToListString(email) {
+    emailListString += email.author + " : " + email.message + "\n"
+}
+
+- it this a good line but not what professionals would use
+
+
+
+- arrow code below:
+const addToListString(email) => {
+    emailListString += email.author + " : " + email.message + "\n"
+}
+
+
+
+- no curly brackets below:
+const addToListString = (email) => {
+    emailListString += email.author + " : " + email.message + "\n"
+}
+
+
+-
+
+
+
+
+emailList.forEach(addToListString);
+
+
+
+*/
